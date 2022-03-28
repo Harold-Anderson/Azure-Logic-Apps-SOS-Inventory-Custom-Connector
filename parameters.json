@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_SOS_Inventory_Connection_name": { 
+            "value": "SOS_Inventory_Connection"
+        },
+        "location": {
+            "value": "westus2"
+        },
+        "clientID": {
+            "value": "3ad73fc4c17842938ea0df3c11ffbf64"
+        },
+        "customApis_SOS_Inventory_name": {
+            "value": "SOS_Inventory"
+        }
+    }
+}
