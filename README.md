@@ -7,7 +7,8 @@ Azure Logic Apps Custom Connector for SOS Inventory
 2.  You will have to register for a developer account at developer.sosinventory.com
 3.  Generate a Client ID and Secret key for a new app.
 4.  Add these to a parameters.json file.
-5.  Deploy the custom connector to Azure.
+5.  Deploy the Azure Resource Manager template for the custom connector (the file template.json) to Azure with this command:
+    az deployment group create  --resource-group my-resource-group --template-file template.json --parameters parameters.json
 
 
 # Contribute

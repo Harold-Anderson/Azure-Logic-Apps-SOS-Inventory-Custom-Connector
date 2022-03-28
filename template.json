@@ -2,14 +2,6 @@
 	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"customApis_SOS_Inventory_name": {
-			"defaultValue": "SOS_Inventory",
-			"type": "String"
-		},
-		"connections_SOS_Inventory_Connection_name": {
-			"defaultValue": "SOS_Inventory_Connection",
-			"type": "String"
-		},
 		"location": {
 			"defaultValue": "westus2",
 			"type": "string"
@@ -2274,35 +2266,6 @@
 					"tags": []
 				},
 				"apiType": "Rest"
-			}
-		},
-		{
-			"type": "Microsoft.Web/connections",
-			"apiVersion": "2016-06-01",
-			"name": "[parameters('connections_SOS_Inventory_Connection_name')]",
-			"location": "westus2",
-			"dependsOn": [
-				"[resourceId('Microsoft.Web/customApis', parameters('customApis_SOS_Inventory_name'))]"
-			],
-			"kind": "V1",
-			"properties": {
-				"displayName": "SOS Inventory Connection",
-				"statuses": [{
-					"status": "Connected"
-				}],
-				"customParameterValues": {},
-				"nonSecretParameterValues": {},
-				"createdTime": "2022-03-21T12:33:04.5792548Z",
-				"changedTime": "2022-03-23T17:56:44.0289924Z",
-				"api": {
-					"name": "SOS_Inventory",
-					"displayName": "SOS_Inventory",
-					"description": "Retrieves and updates information in SOS Inventory",
-					"iconUri": "/Content/retail/assets/default-connection-icon.e6bb72160664a5e37b9923c3d9f50ca5.2.svg",
-					"id": "[resourceId('Microsoft.Web/customApis', parameters('customApis_SOS_Inventory_name'))]",
-					"type": "Microsoft.Web/customApis"
-				},
-				"testLinks": []
 			}
 		}
 	]
