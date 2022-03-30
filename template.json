@@ -9,7 +9,11 @@
 		"clientID": {
 			"defaultValue": "null",
 			"type": "string"
-		}
+		},
+		"clientsecret": {
+			"defaultValue": "null",
+			"type": "string"
+			}	
 	},
 	"variables": {},
 	"resources": [{
@@ -24,6 +28,7 @@
 						"oAuthSettings": {
 							"identityProvider": "oauth2",
 							"clientId": "[parameters('clientID')]",
+							"ClientSecret": "[parameters('ClientSecret')]",
 							"scopes": [],
 							"redirectUrl": "https://logic-apis-[parameters('location')].consent.azure-apim.net/redirect",
 							"properties": {},
