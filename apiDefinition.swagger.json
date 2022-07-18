@@ -1,58 +1,4 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"location": {
-			"defaultValue": "westus2",
-			"type": "string"
-		},
-		"clientID": {
-			"defaultValue": "null",
-			"type": "string"
-		},
-		"clientsecret": {
-			"defaultValue": "null",
-			"type": "string"
-			}	
-	},
-	"variables": {},
-	"resources": [{
-			"type": "Microsoft.Web/customApis",
-			"apiVersion": "2016-06-01",
-			"name": "SOS_Inventory",
-			"location": "[parameters('location')]",
-			"properties": {
-				"connectionParameters": {
-					"token": {
-						"type": "oauthSetting",
-						"oAuthSettings": {
-							"identityProvider": "oauth2",
-							"clientId": "[parameters('clientID')]",
-							"ClientSecret": "[parameters('ClientSecret')]",
-							"scopes": [],
-							"redirectUrl": "https://logic-apis-[parameters('location')].consent.azure-apim.net/redirect",
-							"properties": {},
-							"customParameters": {
-								"authorizationUrl": {
-									"value": "https://api.sosinventory.com/oauth2/authorize"
-								},
-								"tokenUrl": {
-									"value": "https://api.sosinventory.com/oauth2/token"
-								},
-								"refreshUrl": {
-									"value": "https://api.sosinventory.com/oauth2/token"
-								}
-							}
-						}
-					}
-				},
-				"capabilities": [],
-				"description": "Retrieves and updates information in SOS Inventory",
-				"displayName": "SOS Inventory",
-				"iconUri": "/Content/retail/assets/default-connection-icon.e6bb72160664a5e37b9923c3d9f50ca5.2.svg",
-                "backendService": {
-                    "serviceUrl": "https://api.sosinventory.com/api/v2"
-                },
 				"swagger": {
 					"swagger": "2.0",
 					"info": {
@@ -2269,9 +2215,6 @@
 						"oauth2_auth": []
 					}],
 					"tags": []
-				},
-				"apiType": "Rest"
-			}
-		}
-	]
+				}
+				
 }
